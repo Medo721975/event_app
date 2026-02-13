@@ -25,8 +25,6 @@ class _AddEventScreenState extends State<AddEventScreen> {
   static const Color _labelColor    = Color(0xFF1A237E);
   static const Color _hintColor     = Color(0xFFB0B8D8);
   static const Color _borderColor   = Color(0xFFD6DAF0);
-  static const Color _chipUnselBg   = Color(0xFFFFFFFF);
-  static const Color _chipUnselText = Color(0xFF1A237E);
 
   final List<String> categories = [
     "eating",
@@ -104,10 +102,9 @@ class _AddEventScreenState extends State<AddEventScreen> {
                         onTap: () => provider.changeCategory(index),
                         child: Chip(
                           label: Text(categories[index]),
-                          backgroundColor:
-                          index == provider.selectedCategoryIndex
+                          backgroundColor: index == provider.selectedCategoryIndex
                               ? _primaryNavy
-                              : _chipUnselBg,
+                              : _cardWhite,
                           side: BorderSide(
                             color: index == provider.selectedCategoryIndex
                                 ? _primaryNavy
@@ -118,8 +115,8 @@ class _AddEventScreenState extends State<AddEventScreen> {
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
                             color: index == provider.selectedCategoryIndex
-                                ? Colors.white
-                                : _chipUnselText,
+                                ? _cardWhite
+                                : _primaryNavy,
                           ),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(50),
@@ -291,7 +288,7 @@ class _AddEventScreenState extends State<AddEventScreen> {
                           ),
                         ),
                       ),
-                    ],
+                    ], 
                   ),
 
                   SizedBox(height: 18),
